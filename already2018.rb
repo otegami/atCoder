@@ -1,0 +1,1 @@
+puts gets.strip.to_s.gsub(/[0-9]{4}/, '2018')

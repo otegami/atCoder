@@ -1,17 +1,13 @@
-def calculator(total_price, number)
-  [-1, -1, -1] if Y % 1000 != 0
-  (0..number).each do |i|
-    (0..(number - i)).each do |j|
-      (0..(number - i - j)).each do |k|
-        if 10000 * k + 5000 * j + 1000 * i == total_price
-          return p [k , j, i]
-        end
-      end
+N, y = gets.split.map(&:to_i)
+Y = y / 1000
+x, y, z = -1, -1, -1
+
+
+(0..N).each do |i|
+  (0..(N-i)).each do |j|
+    if (10 * (N - i - j)) + 5 * j + 1 * i == Y
+      x, y, z = N - i - j, j, i
     end
   end
-  [-1, -1, -1]
 end
-
-N, Y = gets.split.map(&:to_i)
-ans = calculator(Y, N)
-puts ans.map(&:to_s).join(" ")
+printf("%s %s %s\n", x, y, z)
